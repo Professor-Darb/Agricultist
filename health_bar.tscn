@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tcjnehi8oxqe"]
+
+[ext_resource type="Script" uid="uid://sdra1obixv3d" path="res://healthbar.gd" id="1_m7ell"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh0xj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wus2"]
+bg_color = Color(0.45465344, 0, 0.022818692, 1)
+
+[sub_resource type="Theme" id="Theme_vu1cc"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kh0xj")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_2wus2")
+
+[node name="HealthBar" type="Control" unique_id=647623064 node_paths=PackedStringArray("healthComp")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7ell")
+healthComp = NodePath("")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1063976084]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1632876875]
+offset_right = 143.0
+offset_bottom = 128.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1914586411]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 100)
+custom_maximum_size = Vector2(600, 100)
+layout_mode = 2
+theme = SubResource("Theme_vu1cc")
+step = 1.0
+value = 100.0
+show_percentage = false
